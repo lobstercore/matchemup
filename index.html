@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>Matchemup</title>
+    <link rel="icon" href="favicon.ico">
+    <link href="style.css" type="text/CSS" rel="stylesheet" />
+    <script defer 
+    src="script.js"></script>
+    
+  </head>
+  <body class="body">
+    <header class="header">
+      <div class="language_toggle_wrapper">
+        <button class="language_toggle">
+          <span class="english_indicator language_indicator">English</span>/
+          <span class="chinese_indicator language_indicator">中文</span>
+        </button>
+      </div>
+     <div></div>
+      <div class="header_buttons">
+        <button class="new_game text" data-modal="newGameModal" data-text-key="newGame">New Game</button>
+        <button class="how_to_play text" data-modal="howToPlayModal"data-text-key="howToPlay">How to Play</button>
+        <button class="settings text" data-modal="settingsModal"data-text-key="settings">Settings</button>
+      </div>
+    </header>
+    <main class="main">
+      <img class="logo" src="img/Matchemup.gif">
+      <div id="newGameModal" class="modal hidden">
+        <button class="close-modal">&times;</button>
+        <h1 class = "text" data-text-key="chooseGameTypeText">Choose game Type:</h1>
+        <section class="slider-container">
+          <div class="new_game_slider slider">
+            <div class="slides">
+              <button class="animals_start slide text" data-text-key="animalsSlideText">Animals<br>🦒</button>
+              <button class="vehicles_start slide text" data-text-key="vehiclesSlideText">Vehicles<br>🛻</button>
+              <button class="things_that_fly_start slide text" data-text-key="thingsThatFlySlideText">Things That Fly<br>✈️</button>
+            </div>
+            <button class="slider__btn slider__btn--left">&larr;</button>
+            <button class="slider__btn slider__btn--right">&rarr;</button>
+            <div class="dots"></div>
+          </div>
+        
+          <!-- Second Slider for Game Difficulty -->
+          <div class="difficulty_slider slider">
+            <div class="slides">
+              <button class="easy slide text" data-text-key="easyDifficultyText">Easy (8 cards)<br>🙂</button>
+              <button class="medium slide text" data-text-key="mediumDifficultyText">Medium (12 cards)<br>😐</button>
+              <button class="hard slide text" data-text-key="hardDifficultyText">Hard (16 cards)<br>😓</button>
+            </div>
+            <button class="slider__btn slider__btn--left">&larr;</button>
+            <button class="slider__btn slider__btn--right">&rarr;</button>
+            <div class="dots"></div>
+          </div>
+
+          <div class="player_count_slider slider">
+            <div class="slides">
+              <button class="1p slide text" data-text-key="onePlayerText">One Player<br>😊</button>
+              <button class="2p slide text" data-text-key="twoPlayerText">Two players<br>😊😊</button>
+              <button class="3p slide text" data-text-key="threePlayerText">Three Players<br>😊😊😊</button>
+              <button class="4p slide text" data-text-key="fourPlayerText">Four Players<br>😊😊😊😊</button>
+            </div>
+            <button class="slider__btn slider__btn--left">&larr;</button>
+            <button class="slider__btn slider__btn--right">&rarr;</button>
+            <div class="dots"></div>
+          </div>
+        </section>
+      <div   class="new_game_buttons">
+        <button data-modal="playAreaModal" class="start_game text" data-text-key="startGameButtonText">Start the Game!<br>🕹️</button>
+      </div>
+      </div>
+
+    <div id="howToPlayModal" class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1 class="text"data-text-key="explanationHeadingText">How to Play</h1>
+      <p class="text" data-text-key="explanationText">Choose your options and start a new game.  
+        You can play with up to four players. 
+        Tap or click on cards to flip them over. 
+        Find pairs of cards to make a match and score a point.
+        Whoever get the most match points is the winner!
+        When cards are matched, click or tap them to see the picture and learn the English and Chinese words.
+        Enjoy yourself!
+      </p>
+    </div>
+
+     <div id="settingsModal" class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <h1 class="text" data-text-key="settingsMenuHeadingText">Settings</h1>
+      <p class="text"data-text-key="settingsChooseCardBackText">Card back preference:</p>
+      <div class="card_backs">
+        <div class="card_back card_back-1 card_back_active" data-card-back-name="card_back_blue">
+          <img src="img\card_backs\card_back_blue.png" >
+          <p class="text" data-text-key="classicBlueText">Classic Blue</p>
+        </div>
+        <div class="card_back card_back-2" data-card-back-name="card_back_red">
+          <img src="img\card_backs\card_back_red.png" >
+          <p class="text" data-text-key="classicRedText">Classic red</p>
+        </div>
+        <div class="card_back card_back-3" data-card-back-name="card_back_collage_1">
+          <img src="img\card_backs\card_back_collage_1.png">
+          <p class="text" data-text-key="gameCollage1Text">Game Collage 1</p>
+        </div>
+        <div class="card_back card_back-4" data-card-back-name="card_back_collage_2">
+          <img src="img\card_backs\card_back_collage_2.png">
+          <p class="text" data-text-key="gameCollage2Text">Game Collage 2</p>
+        </div>
+      </div>
+      <p class="text"data-text-key="playMusicText">Play some jaunty background music! (If you prefer) 😎</p>
+      
+      <audio controls loop>
+        <source src="audio/matchemup.mp3" type="audio/mpeg" class="text"data-text-key="audioPlayerErrorText">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+    <div id="playAreaModal" class = "play_area_modal hidden modal">
+      <div class = 'play_area_header'>
+        <div class = 'header_left'>🎮</div>
+        <div class = 'message_area'>
+          <h1 class = 'message'>message area</h1>
+        </div>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div class="play_area_main">
+      </div>
+      <div class="overlay_play_area hidden"></div>
+      <div class = 'play_area_footer'>
+      </div>
+    </div>
+    </main>
+    <div class="overlay hidden"></div>
+    <footer class="footer">
+      <div class="credit">
+        <h4>All content ©️ Andy Wade 2024</h2>
+      </div>
+    </footer>
+  </body>
+</html>
