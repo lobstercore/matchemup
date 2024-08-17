@@ -391,7 +391,7 @@ window.onload = function () {
     elements.game.gameArray = elements.game.gameArray.sort(
       () => Math.random() - 0.5
     );
-    console.log(elements.game.gameArray);
+    // console.log(elements.game.gameArray);
   };
 
   // Function to create the expanded card
@@ -610,8 +610,8 @@ window.onload = function () {
       const playerDiv = document.createElement("div");
       playerDiv.classList.add("score_display_area");
       playerDiv.setAttribute("data-player-number", i);
-      playerDiv.innerHTML = `<h1>Player ${i + 1}</h1>
-          <h1>0</h1>`;
+      playerDiv.innerHTML = `<h3>Player ${i + 1}</h3>
+          <h3>0</h3>`;
 
       playerScoreArea.appendChild(playerDiv);
     }

@@ -1,6 +1,6 @@
 html {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: large;
+  font-size: 1rem;
 }
 
 .header {
@@ -24,6 +24,7 @@ main {
 
 .logo {
   height: 100%;
+  max-width: 100%;
 }
 
 audio {
@@ -209,6 +210,10 @@ button:active {
   flex-flow: row nowrap;
   justify-content: space-between;
   width: 100%;
+}
+
+.play_area_footer div {
+  flex: 1;
 }
 
 .score_display_area {
@@ -440,6 +445,24 @@ button:active {
 }
 
 @media (max-width: 768px) {
+  .header,
+  .footer,
+  .play_area_header,
+  .play_area_footer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .header > div,
+  .play_area_header div {
+    margin: 0;
+    padding: 1rem;
+    flex: 1;
+  }
+
+  .message_area h1 {
+    font-size: 1rem;
+  }
+
   .card {
     min-width: 60px; /* Adjust for smaller screens */
     max-width: 100px;
@@ -454,5 +477,15 @@ button:active {
   .card {
     min-width: 50px; /* Adjust for very small screens */
     max-width: 80px;
+  }
+
+  .card img {
+    height: auto;
+    width: 100%;
+  }
+
+  .play_area_main {
+    padding: 10px;
+    gap: 5px; /* Reduce gaps on smaller screens */
   }
 }
