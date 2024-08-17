@@ -391,7 +391,7 @@ window.onload = function () {
     elements.game.gameArray = elements.game.gameArray.sort(
       () => Math.random() - 0.5
     );
-    // console.log(elements.game.gameArray);
+    console.log(elements.game.gameArray);
   };
 
   // Function to create the expanded card
