@@ -264,7 +264,7 @@ window.onload = function () {
 
   const updateScores = function () {
     const scoreAreas = document.querySelectorAll(
-      ".score_display_area h1:last-child"
+      ".score_display_area h3:last-child"
     );
     for (let i = 0; i < scoreAreas.length; i++) {
       scoreAreas[i].textContent = elements.game.scores[i];
